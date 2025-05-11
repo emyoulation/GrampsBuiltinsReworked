@@ -12,4 +12,5 @@ The second part was to add the appropriate relationship description for each sec
 * Spouse sections, add "; married X on &lt;date> in &lt;place>"
 * Children/granchildren section, add "; son/daughter of Y and Z"
 
-Similar to the the Biography quickview
+Similar to the the [Biography quickview](https://github.com/gramps-project/addons-source/blob/maintenance/gramps60/BiographyQuickview/BiographyQuickview.py)
+![image](https://github.com/user-attachments/assets/cc76adae-e0d1-4a46-b52b-91710aba0c5f)
