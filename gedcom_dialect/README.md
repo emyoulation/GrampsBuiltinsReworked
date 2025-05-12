@@ -4,7 +4,7 @@ GEDCOM dialect : experiments to change the format of Notes generated for unrecog
 
 With a note that is SO different from the tag data, it is too difficult to build test post-processing scripts that easily convey to the experimental version of the import plugin.  So the first step to expanding the plugin is preserving parsable original data. 
 
-[Outstanding problems reported for the Gramps 5.5.1 import](https://www.gedcomassessment.com/en/assessment-gramps-5.htm):
+[Outstanding problems reported for the Gramps 5.5.1 import](https://web.archive.org/web/20220520005654/https://www.gedcomassessment.com/en/assessment-gramps-5.htm):
 
 * IDNO (ID Number)
 * Change Date
