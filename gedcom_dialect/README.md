@@ -12,7 +12,7 @@ With a note that is SO different from the tag data, it is too difficult to build
 * FROM dates
 * TO dates
 * INT dates; with or without "(Phrase)" .. deduced or inferred from other information with the evidence/reasoning as the "phrase"
-* Event Primaary
+* Event Primary
 * Event Shared: SHAR Role, ASSO Rela
 * BIRT/DEAT/CENS with TYPE
 * Master Place
