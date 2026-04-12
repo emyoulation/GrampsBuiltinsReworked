@@ -1,17 +1,21 @@
-Now let me fetch the raw file for cleaner reading: I have enough from the rendered view. 
-Let me also look at the BatchTool base class and the existing Ok Cancel Dialog patterns for guidance: I have a thorough understanding of the codebase from the source. 
-Let me now build the enhanced `eventnames.py`: There's a typo in the `rb_box` construction line — let me fix it:
-Now let's do a quick syntax check: Clean. 
-Let me view the final file to make one last review pass: Looks solid. 
-Let me present it: Here's a summary of every change made and the reasoning behind each decision.
+Add pre-run dialog with Add/Remove modes to Extract Event Descriptions tool.
 
----
+The existing undo-history warning dialog provided no useful context and was too easy to dismiss accidentally when the tool was not intended to be run.  This change replaces it with a purpose-built EventNamesDialog offering two clearly labelled radio options:
 
-## What changed and why
+  • Add descriptions to events with blank descriptions (original behaviour,     selected by default).
+  • Remove descriptions that match the auto-generated pattern, reversing a     previous run without touching manually-authored descriptions.
+
+A Stop button exits cleanly before any database transaction is opened.
+
+Generated-by: Claude Sonnet 4.6, Anthropic (claude-sonnet-4-6) 
+Prompt: "develop a new dialog to supplant the Undo history warning dialog with Stop and Proceed buttons that provides a reciprocal option to clear any description that matches what the Tool might have added previously"
+
 
 ### New class: `EventNamesDialog`
 
-This replaces the role previously played by the bare "Undo history warning" that `BatchTool.__init__` fires automatically. By wiring the dialog into `_show_dialog_and_run()` — which is called **after** `BatchTool.__init__` completes but before any database work begins — the user sees a purposeful, tool-specific dialog instead of a generic alarm.
+This (fails to) replace the role previously played by the bare "Undo history warning" that `BatchTool.__init__` fires automatically. 
+
+By wiring the dialog into `_show_dialog_and_run()` — which is called **after** `BatchTool.__init__` completes but before any database work begins — the user sees a purposeful, tool-specific dialog instead of a generic alarm.
 
 The dialog contains:
 
