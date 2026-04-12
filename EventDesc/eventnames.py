@@ -4,7 +4,7 @@
 # Copyright (C) 2000-2007 Donald N. Allingham
 # Copyright (C) 2008      Brian G. Matherly
 # Copyright (C) 2010      Jakim Friant
-# Copyright (C) 2025      (contributor)
+# Copyright (C) 2026      Brian McCullough (Claude AI generated update)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
