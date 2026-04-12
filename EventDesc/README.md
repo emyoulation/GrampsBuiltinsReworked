@@ -6,7 +6,7 @@ The existing undo-history warning dialog provided no useful context and was too 
 
 A Stop button exits cleanly before any database transaction is opened.
 
-**Generated-by: Claude Sonnet 4.6, Anthropic (claude-sonnet-4-6)** 
+#### Generated-by: Claude Sonnet 4.6, Anthropic (claude-sonnet-4-6) 
 *Prompt:* "develop a new dialog to supplant the Undo history warning dialog with Stop and Proceed buttons that provides a reciprocal option to clear any description that matches what the Tool might have added previously"
 
 
@@ -56,3 +56,4 @@ The remove pass re-derives the exact string that `person_event_name` / `family_e
 * add an Event filtering option
 * Rename Tool (Since "Extract" was originally inaccruate. And moreso now that there is a Remove option)
 * Add note that Undo History will exceed the maximum so Undo is disabled. (Backup before proceeding. Could be an intellingent Backup message? If database is not dirty since last backup, no backup should be suggested.)
+* Add override for Preferences -> Data -> Name Format ("Call Last Suffix" might be more natural than GUI default format of "Last,First")  
