@@ -65,5 +65,5 @@ The remove pass re-derives the exact string that `person_event_name` / `family_e
 * Rename Tool (Since "Extract" was originally inaccruate. And moreso now that there is a Remove option)
 * Add note that Undo History will exceed the maximum so Undo is disabled. (Backup before proceeding. Could be an intellingent Backup message? If database is not dirty since last backup, no backup should be suggested.)
 * Add override for Preferences -> Data -> Name Format ("Call Last Suffix" might be more natural than GUI default format of "Last,First")
-* Make text more terse to reduce translator burden. (And improve readability for <abbr title="English for Speakers of Other Languages">[ESOL](https://wikipedia.org/wiki/English_as_a_second_or_foreign_language)</abbr> users of untranslated English strings.)
+* Make text more terse to reduce translator burden. (And improve readability for <a title="English for Speakers of Other Languages" href="https://wikipedia.org/wiki/English_as_a_second_or_foreign_language">ESOL</a> users of untranslated English strings.)
 * Verify Remove works with localized strings
