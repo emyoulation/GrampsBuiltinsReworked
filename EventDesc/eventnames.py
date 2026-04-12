@@ -182,7 +182,7 @@ class EventNamesDialog(Gtk.Dialog):
             self._hint.set_markup(
                 _(
                     "<i>Events whose description is already set will not be "
-                    "changed.  This action can be undone via Edit → Undo.</i>"
+                    "changed.  This action cannot be undone via Edit → Undo.</i>"
                 )
             )
         else:
@@ -193,7 +193,7 @@ class EventNamesDialog(Gtk.Dialog):
                     "<tt>Event type of Person/Family</tt>"
                     ") will be cleared.  "
                     "Descriptions you have written manually will not be "
-                    "touched.  This action can be undone via Edit → Undo.</i>"
+                    "touched.  This action cannot be undone via Edit → Undo.</i>"
                 )
             )
 
