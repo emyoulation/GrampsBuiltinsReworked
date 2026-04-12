@@ -1,19 +1,18 @@
 Add pre-run dialog with Add/Remove modes to Extract Event Descriptions tool.
 
 The existing undo-history warning dialog provided no useful context and was too easy to dismiss accidentally when the tool was not intended to be run.  This change replaces it with a purpose-built EventNamesDialog offering two clearly labelled radio options:
-
-  • Add descriptions to events with blank descriptions (original behaviour,     selected by default).
-  • Remove descriptions that match the auto-generated pattern, reversing a     previous run without touching manually-authored descriptions.
+* Add descriptions to events with blank descriptions (original behaviour,     selected by default).
+* Remove descriptions that match the auto-generated pattern, reversing a     previous run without touching manually-authored descriptions.
 
 A Stop button exits cleanly before any database transaction is opened.
 
-Generated-by: Claude Sonnet 4.6, Anthropic (claude-sonnet-4-6) 
-Prompt: "develop a new dialog to supplant the Undo history warning dialog with Stop and Proceed buttons that provides a reciprocal option to clear any description that matches what the Tool might have added previously"
+**Generated-by: Claude Sonnet 4.6, Anthropic (claude-sonnet-4-6)** 
+*Prompt:* "develop a new dialog to supplant the Undo history warning dialog with Stop and Proceed buttons that provides a reciprocal option to clear any description that matches what the Tool might have added previously"
 
 
 ### New class: `EventNamesDialog`
 
-This (fails to) replace the role previously played by the bare "Undo history warning" that `BatchTool.__init__` fires automatically. 
+This *(fails to) replace* the role previously played by the bare "Undo history warning" that `BatchTool.__init__` fires automatically. 
 
 By wiring the dialog into `_show_dialog_and_run()` — which is called **after** `BatchTool.__init__` completes but before any database work begins — the user sees a purposeful, tool-specific dialog instead of a generic alarm.
 
@@ -38,26 +37,3 @@ The remove pass re-derives the exact string that `person_event_name` / `family_e
 ### `EventNames.__init__` restructure
 
 `_show_dialog_and_run()` captures the parent window once, builds the dialog, reads the chosen mode, destroys the dialog, and dispatches to `_run_add` or `_run_remove`. If the user clicks **Stop**, the method returns immediately — the undo stack is never touched.
-
-### Commit message (for your reference)
-
-```
-Add pre-run dialog with Add/Remove modes to Extract Event Descriptions tool.
-
-The existing undo-history warning dialog provided no useful context and
-was too easy to dismiss accidentally when the tool was not intended to
-be run.  This change replaces it with a purpose-built EventNamesDialog
-offering two clearly labelled radio options:
-
-  • Add descriptions to events with blank descriptions (original behaviour,
-    selected by default).
-  • Remove descriptions that match the auto-generated pattern, reversing a
-    previous run without touching manually-authored descriptions.
-
-A Stop button exits cleanly before any database transaction is opened.
-
-Generated-by: Claude Sonnet 4.6, Anthropic (claude-sonnet-4-6)
-Prompt: "develop a new dialog to supplant the Undo history warning dialog
-with Stop and Proceed buttons that provides a reciprocal option to clear
-any description that matches what the Tool might have added previously"
-```
