@@ -14,7 +14,11 @@ A Stop button exits cleanly before any database transaction is opened.
 
 This *(fails to) replace* the role previously played by the bare "Undo history warning" that `BatchTool.__init__` fires automatically. 
 
+![Original Warning dialog with "Bail Out" option](media/BailOut.PNG)
+ 
 By wiring the dialog into `_show_dialog_and_run()` — which is called **after** `BatchTool.__init__` completes but before any database work begins — the user sees a purposeful, tool-specific dialog instead of a generic alarm.
+
+![Default option dialog for "Extract Event descriptions" tool](media/Add.PNG)
 
 The dialog contains:
 
@@ -29,6 +33,8 @@ The dialog contains:
 
 ### New mode: `MODE_REMOVE` / `_run_remove()`
 
+![Default option dialog for "Extract Event descriptions" tool](media/Remove.PNG)
+
 The remove pass re-derives the exact string that `person_event_name` / `family_event_name` *would* produce for each event's current primary person or family, then compares it to the stored description. Only an exact match triggers a clear. This means:
 
 - Descriptions the user wrote themselves (even if they happen to contain the event type name) are safe unless they match the template character-for-character.
@@ -37,3 +43,16 @@ The remove pass re-derives the exact string that `person_event_name` / `family_e
 ### `EventNames.__init__` restructure
 
 `_show_dialog_and_run()` captures the parent window once, builds the dialog, reads the chosen mode, destroys the dialog, and dispatches to `_run_add` or `_run_remove`. If the user clicks **Stop**, the method returns immediately — the undo stack is never touched.
+
+### Statistics feedback
+
+![Default option dialog for "Extract Event descriptions" tool](media/Statistics.PNG)
+
+## Future improvements
+
+* Eliminate the redundant original "Bail Out" dialog
+* Progress bar feedback
+* Improve contextual comment for each option. Include example of an 'extracted' descrption
+* add an Event filtering option
+* Rename Tool (Since "Extract" was originally inaccruate. And moreso now that there is a Remove option)
+* Add note that Undo History will exceed the maximum so Undo is disabled. (Backup before proceeding. Could be an intellingent Backup message? If database is not dirty since last backup, no backup should be suggested.)
