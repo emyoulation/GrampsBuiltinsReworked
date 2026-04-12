@@ -1,3 +1,11 @@
+Original [`gramps/plugins/tool/eventnames.py`](https://github.com/gramps-project/gramps/blob/maintenance/gramps60/gramps/plugins/tool/eventnames.py) is less useful than when it was originally created. Descriptions no longer need to be explicit because the expanded GUI gives similar feedback. Explicit descriptions just add clutter to the database and Web reports.  
+
+The [Example.gramps](https://gramps-project.org/wiki/index.php/Example.gramps) sample tree is a good example of this clutter. (It contains over 3,000 redundant descriptions.)
+
+This replacement must be manually installed. During testing, recommend renaming the original `eventnames.py` file rather than overwriting it.
+
+## Enhancements 
+
 Add pre-run dialog with Add/Remove modes to Extract Event Descriptions tool.
 
 The existing undo-history warning dialog provided no useful context and was too easy to dismiss accidentally when the tool was not intended to be run.  This change replaces it with a purpose-built EventNamesDialog offering two clearly labelled radio options:
