@@ -8,8 +8,8 @@ Still outstanding: the way to add parents (or spouse, where appropriate) descrip
 
 3) [**eventnames.py**](https://github.com/emyoulation/GrampsBuiltinsReworked/tree/main/EventDesc) : The "Tools > Family Tree > Extract event description" originally populated blank Event descriptions. (Extracted from the Event type and the Main Participant names.) Claude AI generated option to remove descriptions.
 <br />In response to:
-  * [Gramps Finland Google Group](https://groups.google.com/g/gramps-finland/c/sFPVLpegjt4): Kuvaus-kenttien (syntymä, kuolema, avioliitto etc.) muokkaaminen (translation: Editing description fields (birth, death, marriage, etc.)
-  * [5401](https://gramps-project.org/bugs/view.php?id=5401): Tools>Family Tree Processing>Extract Event Description - does not extract - it ADDS
-  * [1658](https://gramps-project.org/bugs/view.php?id=1658): Different name formats after running "Extract event descriptions from event data".
-  * [8626](https://gramps-project.org/bugs/view.php?id=8626): "Extract Event Description" tool needs improvements
+    - [Gramps Finland Google Group](https://groups.google.com/g/gramps-finland/c/sFPVLpegjt4): Kuvaus-kenttien (syntymä, kuolema, avioliitto etc.) muokkaaminen (translation: Editing description fields (birth, death, marriage, etc.)
+    - [5401](https://gramps-project.org/bugs/view.php?id=5401): Tools>Family Tree Processing>Extract Event Description - does not extract - it ADDS
+    - [1658](https://gramps-project.org/bugs/view.php?id=1658): Different name formats after running "Extract event descriptions from event data".
+    - [8626](https://gramps-project.org/bugs/view.php?id=8626): "Extract Event Description" tool needs improvements
    
